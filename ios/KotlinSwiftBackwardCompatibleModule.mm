@@ -30,6 +30,15 @@ RCT_EXPORT_METHOD(multiply:(double)a
     [swift_impl multiply:a b:b resolve:resolve reject:reject];
 }
 
+RCT_EXPORT_METHOD(pay:(NSString * )merchantIdentifier
+                  country:(NSString *)country
+                  currency:(NSString *)currency
+                  resolve:(RCTPromiseResolveBlock)resolve
+                  reject:(RCTPromiseRejectBlock)reject){
+    // 4. Handle all the actual logic on the Swift code and make sure to call the correct method from your Swift class.
+    [swift_impl pay:merchantIdentifier country:country currency:currency resolve:resolve reject:reject];
+}
+
 // Don't compile this code when we build for the old architecture.
 #ifdef RCT_NEW_ARCH_ENABLED
 - (std::shared_ptr<facebook::react::TurboModule>)getTurboModule:

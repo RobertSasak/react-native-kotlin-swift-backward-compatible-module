@@ -1,8 +1,11 @@
 import * as React from 'react';
-import { useColorScheme } from 'react-native';
+import { useColorScheme, Button } from 'react-native';
 
 import { StyleSheet, View, Text } from 'react-native';
-import { multiply } from 'react-native-kotlin-swift-backward-compatible-module';
+import {
+  multiply,
+  pay,
+} from 'react-native-kotlin-swift-backward-compatible-module';
 
 export default function App() {
   const textColor = useColorScheme() === 'dark' ? 'white' : 'black';
@@ -21,6 +24,10 @@ export default function App() {
       >
         Result: {result}
       </Text>
+      <Button
+        onPress={() => pay('merchantId', 'NO', 'NOK').then(setResult)}
+        title="Pay"
+      />
     </View>
   );
 }

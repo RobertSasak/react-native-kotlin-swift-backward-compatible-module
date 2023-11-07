@@ -28,3 +28,15 @@ const KotlinSwiftBackwardCompatibleModule =
 export function multiply(a: number, b: number): Promise<number> {
   return KotlinSwiftBackwardCompatibleModule.multiply(a, b);
 }
+
+export function pay(
+  merchantIdentifier: string,
+  country: string,
+  currency: string
+): Promise<number> {
+  return KotlinSwiftBackwardCompatibleModule.pay(
+    merchantIdentifier,
+    country,
+    currency
+  );
+}
