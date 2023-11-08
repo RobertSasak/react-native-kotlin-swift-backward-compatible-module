@@ -15,7 +15,7 @@ import StripeApplePay
 
   @objc public func pay(
     _ merchantIdentifier: String, country: String, currency: String,
-    resolve: RCTPromiseResolveBlock, reject: RCTPromiseRejectBlock
+    resolve: @escaping RCTPromiseResolveBlock, reject: RCTPromiseRejectBlock
   ) {
     // Configure a payment request
     let pr = StripeAPI.paymentRequest(
